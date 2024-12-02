@@ -2,15 +2,15 @@ import numpy as np
 
 # Определение системы дифференциальных уравнений
 def derivatives(x, y1, y2):
-    dy1 = np.cos(x + y2)
-    dy2 = np.sin(x - y2)
+    dy1 = np.e ** (y1 * y2)
+    dy2 = x * y1 * y2
     return dy1, dy2
 
 def f1(x, y1, y2):
-    return np.cos(x + y2)
+    return np.e**(y1*y2)
 
 def f2(x, y1, y2):
-    return np.sin(x - y2)
+    return x*y1*y2
 
 # Метод Рунге-Кутта 4-го порядка
 def runge_kutta4(a, b, h, y1_init, y2_init):
@@ -65,10 +65,10 @@ def adams4(a, b, h, y1_init, y2_init):
 # Основная функция
 def main():
     a = 0.0       # начальная точка
-    b = 4.0       # конечная точка
+    b = 5.0       # конечная точка
     h = 0.1       # шаг
-    y1_init = 0.7  # начальное значение y1
-    y2_init = -0.5 # начальное значение y2
+    y1_init = 1.0  # начальное значение y1
+    y2_init = 0.0 # начальное значение y2
 
     # метод Адамса
     x, y1, y2 = adams4(a, b, h, y1_init, y2_init)
