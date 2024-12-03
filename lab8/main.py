@@ -10,7 +10,7 @@ def print_results(x, y1, y2):
 def main():
     a = 0.0
     b = 5.0
-    h = 0.01
+    h = 0.1
     y1_init = 1.0
     y2_init = 0.0
 

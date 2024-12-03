@@ -68,7 +68,7 @@ if __name__ == "__main__":
         exit()
 
     x = np.linspace(a, b, n)
-    y = 1 / x * np.exp(x)  # задание функции
+    y = np.sin(x)*np.exp(-1*x*x)  # задание функции
 
     spline = CubicSpline(x, y)
 
